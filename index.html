@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+*,
+*::after,
+*::before{
+ box-sizing: border-box;
+ padding: 0;
+ margin: 0;
+}
+.s10-container-img {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.s10-container-img  .image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.s10-container-img  .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+
+  overflow: hidden;
+  width: 5%;
+  height: 100%;
+  transition: .5s ease;
+}
+
+.s10-container-img :hover .overlay {
+  width: 100%;
+}
+
+.s10-container-img  .text {
+  
+  
+  position: absolute;
+  top: 50%;
+  
+  white-space: nowrap;
+      font-size: 8vh;
+    transform: rotate(270deg);
+    
+}
+
+.s10-container-img .left-link{
+  left: -10%;
+}
+.s10-container-img .right-link{
+  right: 0;
+}
+
+.s10-container-img  .text a{
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+.s10-container-img .text:hover a{
+  color: #111;
+  outline: 1px solid #fff;
+
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="s10-container-img">
+  <img class="image" data-image-focal-point="NaN,NaN" alt="" data-src="https://images.squarespace-cdn.com/content/v1/60af7837abd0265eb34c24d8/7297381f-6f33-4dd9-b69c-23325c04e4b4/Number+10+Strategies+-+a-protest-in-the-street-holds-up-mobile-phones.jpg" data-image="https://images.squarespace-cdn.com/content/v1/60af7837abd0265eb34c24d8/7297381f-6f33-4dd9-b69c-23325c04e4b4/Number+10+Strategies+-+a-protest-in-the-street-holds-up-mobile-phones.jpg" data-image-dimensions="4460x2973" class="list-slideshow-image" data-load="false" data-mode="cover" data-use-advanced-positioning="true" data-parent-ratio="1.9" data-image-resolution="750w" src="https://images.squarespace-cdn.com/content/v1/60af7837abd0265eb34c24d8/7297381f-6f33-4dd9-b69c-23325c04e4b4/Number+10+Strategies+-+a-protest-in-the-street-holds-up-mobile-phones.jpg?format=750w" data-loaded="true" style="width: 100%; height: 100%; object-fit: cover;">
+  <div class="text right-link">
+    <a href="https://no10s.squarespace.com/no10s/home" class="right-link">No.10s</a>
+    </div>
+
+
+  <div class="overlay" >
+    <img data-image-focal-point="NaN,NaN" alt="" data-src="https://images.squarespace-cdn.com/content/v1/60af7837abd0265eb34c24d8/1622378777151-IJFIYKNKQ5EDL04Z646H/31969938_334772027047415_8799278818494775296_o.jpg" data-image="https://images.squarespace-cdn.com/content/v1/60af7837abd0265eb34c24d8/1622378777151-IJFIYKNKQ5EDL04Z646H/31969938_334772027047415_8799278818494775296_o.jpg" data-image-dimensions="1280x856" class="list-slideshow-image" data-load="false" data-mode="cover" data-use-advanced-positioning="true" data-parent-ratio="0.3" data-image-resolution="500w" src="https://images.squarespace-cdn.com/content/v1/60af7837abd0265eb34c24d8/1622378777151-IJFIYKNKQ5EDL04Z646H/31969938_334772027047415_8799278818494775296_o.jpg?format=500w" data-loaded="true" style="width: 100%; height: 100%; object-fit: cover;">
+    <div class="text left-link">
+      <a href="https://no10s.squarespace.com/home" >Number 10 Strategies</a>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  let containerImg = document.querySelector('.s10-container-img ');
+  let imgOverlay = document.querySelector('.s10-container-img .overlay');
+
+
+     let direction = "",
+     oldx = 0;
+
+     function mousemovemethod(e) {
+
+         let dis = window.innerWidth  - e.pageX  ;
+         console.log(dis)
+
+         imgOverlay.style.width = dis + 'px';
+
+         if(e.pageX < 80){
+          imgOverlay.style.width = '100%';
+         }
+
+         if(dis < 100){
+          imgOverlay.style.width = '0%';
+         }
+
+
+     }
+  
+
+  containerImg.addEventListener("mousemove", mousemovemethod, false);
+containerImg.addEventListener("mouseenter", mousemovemethod, false);
+containerImg.addEventListener("mouseleave", mousemovemethod, false)
+</script>
+
+</body>
+</html>
